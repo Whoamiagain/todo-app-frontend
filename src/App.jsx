@@ -160,7 +160,7 @@ function App() {
       if (!session) return;
       try {
         const token = await session.getToken();
-        const response = await fetch("http://localhost:8080/api/tasks/my-day", {
+        const response = await fetch("https://todo-app-87u5.onrender.com/api/tasks", {
           headers: { Authorization: `Bearer ${token}` },
         });
         
@@ -186,7 +186,7 @@ function App() {
       const token = await session.getToken();
       
       if (editingTask && editingTask.type !== taskType) {
-        await fetch(`http://localhost:8080/api/tasks/delete/${editingTask.type}/${editingTask.index}`, {
+        await fetch(`https://todo-app-87u5.onrender.com/api/tasks/delete/${editingTask.type}/${editingTask.index}`, {
           method: "POST",
           headers: { "Authorization": `Bearer ${token}` }
         });
@@ -194,8 +194,8 @@ function App() {
       }
 
       const url = editingTask 
-        ? `http://localhost:8080/api/tasks/update/${editingTask.type}/${editingTask.index}`
-        : "http://localhost:8080/api/tasks/add";
+        ? `https://todo-app-87u5.onrender.com/api/tasks/update/${editingTask.type}/${editingTask.index}`
+        : "https://todo-app-87u5.onrender.com/api/tasks/add";
       
       const response = await fetch(url, {
         method: "POST", 
@@ -227,7 +227,7 @@ function App() {
       const isCurrentlyCompleted = currentTasks[index].Completed;
       try {
         const token = await session.getToken();
-        const response = await fetch(`http://localhost:8080/api/tasks/toggle/${type}/${index}`, {
+        const response = await fetch(`https://todo-app-87u5.onrender.com/api/tasks/toggle/${type}/${index}`, {
           method: "POST",
           headers: { "Authorization": `Bearer ${token}` }
         });
@@ -254,7 +254,7 @@ function App() {
       if (!session) return;
       try {
         const token = await session.getToken();
-        const response = await fetch(`http://localhost:8080/api/tasks/delete/${type}/${index}`, {
+        const response = await fetch(`https://todo-app-87u5.onrender.com/api/tasks/delete/${type}/${index}`, {
           method: "POST",
           headers: { "Authorization": `Bearer ${token}` }
         });
@@ -271,7 +271,7 @@ function App() {
       if (!session) return;
       try {
         const token = await session.getToken();
-        const response = await fetch("http://localhost:8080/api/tasks/clear-completed", {
+        const response = await fetch("https://todo-app-87u5.onrender.com/api/tasks/clear-completed", {
           method: "POST",
           headers: { "Authorization": `Bearer ${token}` }
         });
