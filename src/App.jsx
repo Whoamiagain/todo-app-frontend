@@ -617,12 +617,9 @@ function App() {
 
       {/* MODAL SECTION */}
       {isModalOpen && (
-        <div style={{ 
+      <div style={{ 
           position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, 
-          background: 'rgba(0,0,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000,
-          width: '100%', padding: '15px', borderRadius: '15px', 
-          border: `2px solid ${colors.bg}`, outline: 'none', marginBottom: '20px',
-          boxSizing: 'border-box' 
+          background: 'rgba(0,0,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 
         }}>
           <motion.div 
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
@@ -631,9 +628,10 @@ function App() {
               background: 'white', 
               padding: '30px', 
               borderRadius: '28px', 
-              width: '100%', 
+              width: '90%', // Use 90% so there's a gap on mobile
               maxWidth: '400px',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.2)' 
+              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+              boxSizing: 'border-box' // Ensures padding doesn't push width out
             }}
           >
             <h2 style={{ marginTop: 0, color: colors.primary }}>{editingTask ? "Edit Task ✏️" : "New Task ✨"}</h2>
@@ -643,8 +641,13 @@ function App() {
               value={newTaskName}
               onChange={(e) => setNewTaskName(e.target.value)}
               style={{ 
-                width: '100%', padding: '15px', borderRadius: '15px', 
-                border: `2px solid ${colors.bg}`, outline: 'none', marginBottom: '20px' 
+                width: '100%', 
+                padding: '15px', 
+                borderRadius: '15px', 
+                border: `2px solid ${colors.bg}`, 
+                outline: 'none', 
+                marginBottom: '20px',
+                boxSizing: 'border-box' // <--- ADD THIS LINE HERE
               }}
             />
             <p style={{ 
