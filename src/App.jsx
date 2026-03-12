@@ -160,7 +160,7 @@ function App() {
       if (!session) return;
       try {
         const token = await session.getToken();
-        const response = await fetch("https://todo-app-87u5.onrender.com/api/tasks", {
+        const response = await fetch("https://todo-app-87u5.onrender.com/api/tasks/my-day", {
           headers: { Authorization: `Bearer ${token}` },
         });
         
