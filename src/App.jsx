@@ -516,7 +516,7 @@ function App() {
 
         <SignedOut>
           <div style={{ textAlign: 'center', marginTop: '100px' }}>
-            <h2>Welcome, Sweet Friend!</h2>
+            <h2>Chào em iuuuuuuuu</h2>
             <SignInButton mode="modal">
               <button style={{ background: colors.primary, color: 'white', border: 'none', padding: '12px 24px', borderRadius: '12px', cursor: 'pointer', fontWeight: 'bold' }}>
                 Sign In
